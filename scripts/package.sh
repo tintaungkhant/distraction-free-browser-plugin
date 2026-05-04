@@ -14,6 +14,7 @@ zip -rq "$ZIP" \
   manifest.json \
   icons/icon-16.png icons/icon-32.png icons/icon-48.png icons/icon-128.png \
   popup/popup.html popup/popup.css \
+  options/options.html options/options.css \
   styles \
   dist \
   -x "*.DS_Store"

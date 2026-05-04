@@ -1,0 +1,127 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  background: color-mix(in oklab, currentColor 3%, transparent);
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.page {
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  gap: 28px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.lead {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+.rules ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.rules li {
+  padding: 12px 14px;
+  border: 1px solid color-mix(in oklab, currentColor 12%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklab, Canvas 95%, transparent);
+}
+
+.sites ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.sites label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in oklab, currentColor 15%, transparent);
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  background: color-mix(in oklab, Canvas 95%, transparent);
+}
+
+.sites label:hover {
+  background: color-mix(in oklab, currentColor 5%, Canvas);
+}
+
+.sites .name {
+  font-size: 14px;
+}
+
+.sites input[type="checkbox"] {
+  width: 36px;
+  height: 20px;
+  appearance: none;
+  background: color-mix(in oklab, currentColor 25%, transparent);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.sites input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.15s;
+}
+
+.sites input[type="checkbox"]:checked {
+  background: #22c55e;
+}
+
+.sites input[type="checkbox"]:checked::before {
+  transform: translateX(16px);
+}
+
+.hint {
+  font-size: 12px;
+  opacity: 0.6;
+  margin: 0;
+}

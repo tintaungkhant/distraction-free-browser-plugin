@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Distraction-Free Browser</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page" x-data="toggles" x-cloak>
+      <header>
+        <h1>Distraction-Free Browser</h1>
+        <p class="lead">
+          Hide distracting content on YouTube, Facebook, and TikTok so you can
+          stay focused.
+        </p>
+      </header>
+
+      <section class="rules">
+        <h2>What it does</h2>
+        <ul>
+          <li>
+            <strong>YouTube</strong> — only the search results page and the
+            watch page are available. The home feed, Shorts, recommendations,
+            comments, and end-screen cards are hidden.
+          </li>
+          <li>
+            <strong>Facebook</strong> — all posts, Stories, and Reels are
+            hidden. Top bar, navigation, Messenger, and settings remain
+            available.
+          </li>
+          <li>
+            <strong>TikTok</strong> — all video posts are hidden across the For
+            You feed, Following, Explore, profiles, and search.
+          </li>
+        </ul>
+      </section>
+
+      <section class="sites">
+        <h2>Per-site blocking</h2>
+        <ul>
+          <li>
+            <label>
+              <span class="name">YouTube</span>
+              <input type="checkbox" x-model="state.youtube" />
+            </label>
+          </li>
+          <li>
+            <label>
+              <span class="name">Facebook</span>
+              <input type="checkbox" x-model="state.facebook" />
+            </label>
+          </li>
+          <li>
+            <label>
+              <span class="name">TikTok</span>
+              <input type="checkbox" x-model="state.tiktok" />
+            </label>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p class="hint">
+          Click the toolbar icon to access these toggles from anywhere.
+          Settings sync instantly across all open tabs.
+        </p>
+      </footer>
+    </main>
+    <script src="../dist/options/options.js" defer></script>
+  </body>
+</html>
