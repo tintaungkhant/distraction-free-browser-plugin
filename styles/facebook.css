@@ -1,1 +1,31 @@
-/* Facebook blocking rules — phase 4 */
+/* Posts: feed containers, articles, and FB pagelet variants. */
+html:not(.dfb-disabled) [role="feed"],
+html:not(.dfb-disabled) [role="article"],
+html:not(.dfb-disabled) [aria-posinset],
+html:not(.dfb-disabled) [data-pagelet^="FeedUnit_"],
+html:not(.dfb-disabled) [data-pagelet="Feed"],
+html:not(.dfb-disabled) [data-pagelet*="MainFeed"],
+html:not(.dfb-disabled) [data-pagelet*="ProfileTimeline"],
+html:not(.dfb-disabled) [data-pagelet*="GroupFeed"],
+html:not(.dfb-disabled) [data-pagelet*="PageFeed"] {
+  display: none !important;
+}
+
+/* Stories tray on home. */
+html:not(.dfb-disabled) [data-pagelet*="Stories" i],
+html:not(.dfb-disabled) [data-pagelet*="Story" i],
+html:not(.dfb-disabled) [aria-label*="Stories" i],
+html:not(.dfb-disabled) [aria-label*="story tray" i] {
+  display: none !important;
+}
+
+/* Reels rails / suggestions. */
+html:not(.dfb-disabled) [data-pagelet*="Reel"],
+html:not(.dfb-disabled) [aria-label="Reels"] {
+  display: none !important;
+}
+
+/* Sponsored posts / ads. */
+html:not(.dfb-disabled) [aria-label="Sponsored"] {
+  display: none !important;
+}
