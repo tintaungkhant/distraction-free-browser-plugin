@@ -11,8 +11,9 @@
     "build:content": "bun build src/content/youtube.ts src/content/facebook.ts src/content/tiktok.ts --outdir dist/content --target browser --format iife",
     "build:popup": "bun build src/popup/popup.ts --outdir dist/popup --target browser --format iife",
     "build:options": "bun build src/options/options.ts --outdir dist/options --target browser --format iife",
+    "build:notes": "bun build src/notes/notes.ts --outdir dist/notes --target browser --format iife",
     "build:background": "bun build src/background.ts --outdir dist --target browser --format iife",
-    "build": "bun run build:content && bun run build:popup && bun run build:options && bun run build:background",
+    "build": "bun run build:content && bun run build:popup && bun run build:options && bun run build:notes && bun run build:background",
     "package": "bash scripts/package.sh",
     "typecheck": "tsc --noEmit"
   },

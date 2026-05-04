@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  background: color-mix(in oklab, currentColor 3%, transparent);
+}
+
+.page {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  gap: 24px;
+}
+
+header h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.hint code,
+.hint kbd {
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.add {
+  display: grid;
+  gap: 8px;
+}
+
+.add textarea,
+.note textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklab, currentColor 18%, transparent);
+  border-radius: 8px;
+  font: inherit;
+  background: Canvas;
+  color: inherit;
+}
+
+.add textarea:focus,
+.note textarea:focus {
+  outline: 2px solid #22c55e;
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.add button {
+  justify-self: end;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add button:hover {
+  background: #16a34a;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.note {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid color-mix(in oklab, currentColor 12%, transparent);
+  border-radius: 10px;
+  background: color-mix(in oklab, Canvas 95%, transparent);
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.del {
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in oklab, currentColor 20%, transparent);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.del:hover {
+  background: color-mix(in oklab, #ef4444 15%, transparent);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.empty {
+  font-size: 13px;
+  opacity: 0.6;
+  margin: 0;
+  text-align: center;
+  padding: 24px 0;
+}

@@ -125,3 +125,19 @@ h2 {
   opacity: 0.6;
   margin: 0;
 }
+
+.notes-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.notes-link:hover {
+  background: #16a34a;
+}

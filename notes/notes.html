@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="notes.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>Notes</h1>
+        <p class="hint">
+          Tip: type <code>note</code> in the address bar, press
+          <kbd>Tab</kbd>, then type to add or search.
+        </p>
+      </header>
+
+      <section class="add">
+        <textarea
+          id="draft"
+          rows="3"
+          placeholder="Write a note... (Cmd/Ctrl+Enter to add)"
+        ></textarea>
+        <button id="add-btn" type="button">Add note</button>
+      </section>
+
+      <section class="list">
+        <ul id="notes-list"></ul>
+        <p id="empty" class="empty" hidden>No notes yet.</p>
+      </section>
+    </main>
+    <script src="../dist/notes/notes.js" defer></script>
+  </body>
+</html>

@@ -86,3 +86,20 @@ body {
   opacity: 0.6;
   margin: 12px 0 0;
 }
+
+.notes-link {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: color-mix(in oklab, currentColor 8%, transparent);
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.notes-link:hover {
+  background: color-mix(in oklab, currentColor 15%, transparent);
+}
