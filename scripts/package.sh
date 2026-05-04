@@ -8,7 +8,8 @@ rm -rf dist releases
 bun run build
 mkdir -p releases
 
-ZIP="releases/distraction-free-browser.zip"
+TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
+ZIP="releases/distraction-free-browser-${TIMESTAMP}.zip"
 
 zip -rq "$ZIP" \
   manifest.json \
