@@ -3,7 +3,7 @@
   "name": "Distraction-Free Browser",
   "version": "0.1.0",
   "description": "Hide distracting content on YouTube, Facebook, and TikTok.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "unlimitedStorage"],
   "background": {
     "service_worker": "dist/background.js",
     "scripts": ["dist/background.js"]
