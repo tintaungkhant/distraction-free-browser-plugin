@@ -1,20 +1,20 @@
 {
   "name": "distraction-free-browser",
-  "private": true,
   "version": "0.1.0",
-  "type": "module",
+  "devDependencies": {
+    "@types/alpinejs": "^3.13.11",
+    "@types/chrome": "^0.0.270",
+    "typescript": "~6.0.2"
+  },
+  "private": true,
   "scripts": {
     "build:content": "bun build src/content/youtube.ts src/content/facebook.ts src/content/tiktok.ts --outdir dist/content --target browser --format iife",
     "build:popup": "bun build src/popup/popup.ts --outdir dist/popup --target browser --format iife",
     "build": "bun run build:content && bun run build:popup",
     "typecheck": "tsc --noEmit"
   },
-  "devDependencies": {
-    "@types/alpinejs": "^3.13.11",
-    "@types/chrome": "^0.0.270",
-    "typescript": "~6.0.2"
-  },
+  "type": "module",
   "dependencies": {
-    "alpinejs": "^3.15.12"
+    "@alpinejs/csp": "^3.15.12"
   }
 }

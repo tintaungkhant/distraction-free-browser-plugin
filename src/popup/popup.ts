@@ -1,4 +1,4 @@
-import Alpine from "alpinejs";
+import Alpine from "@alpinejs/csp";
 import type { BlockingState } from "../shared/types.ts";
 import { DEFAULT_STATE } from "../shared/types.ts";
 import { loadState, saveState } from "../shared/runtime.ts";
@@ -16,7 +16,11 @@ document.addEventListener("alpine:init", () => {
     }) {
       this.state = await loadState();
       this.$watch("state", (next) => {
-        void saveState(next);
+        void saveState({
+          youtube: next.youtube,
+          facebook: next.facebook,
+          tiktok: next.tiktok,
+        });
       });
     },
   }));
