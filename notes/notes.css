@@ -8,40 +8,43 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  padding: 32px 16px;
+  padding: 24px 16px;
   background: color-mix(in oklab, currentColor 3%, transparent);
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .page {
   width: 100%;
-  max-width: 720px;
+  max-width: 800px;
   display: grid;
-  gap: 24px;
+  gap: 14px;
+  align-content: start;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
 }
 
 header h1 {
-  margin: 0 0 6px;
-  font-size: 22px;
+  margin: 0;
+  font-size: 20px;
   font-weight: 700;
+}
+
+.status {
+  font-size: 11px;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
 }
 
 .hint {
   margin: 0;
   font-size: 12px;
-  opacity: 0.7;
-}
-
-.hint kbd {
-  background: color-mix(in oklab, currentColor 12%, transparent);
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-family: ui-monospace, monospace;
-  font-size: 11px;
-}
-
-.add {
-  display: grid;
-  gap: 8px;
+  opacity: 0.65;
 }
 
 .toolbar {
@@ -53,6 +56,9 @@ header h1 {
   background: color-mix(in oklab, Canvas 92%, transparent);
   flex-wrap: wrap;
   align-self: start;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .toolbar button {
@@ -80,10 +86,10 @@ header h1 {
 }
 
 .editor {
-  min-height: 80px;
-  padding: 10px 12px;
+  min-height: 60vh;
+  padding: 16px 18px;
   border: 1px solid color-mix(in oklab, currentColor 18%, transparent);
-  border-radius: 8px;
+  border-radius: 10px;
   font: inherit;
   background: Canvas;
   color: inherit;
@@ -99,7 +105,7 @@ header h1 {
 
 .editor[data-placeholder]:empty::before {
   content: attr(data-placeholder);
-  opacity: 0.45;
+  opacity: 0.4;
   pointer-events: none;
 }
 
@@ -107,7 +113,7 @@ header h1 {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 6px 0;
+  margin: 8px 0;
   border-radius: 6px;
 }
 
@@ -119,71 +125,4 @@ header h1 {
 
 .editor p {
   margin: 6px 0;
-}
-
-#add-btn {
-  justify-self: end;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #22c55e;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-#add-btn:hover {
-  background: #16a34a;
-}
-
-.list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 12px;
-}
-
-.note {
-  display: grid;
-  gap: 6px;
-  padding: 12px;
-  border: 1px solid color-mix(in oklab, currentColor 12%, transparent);
-  border-radius: 10px;
-  background: color-mix(in oklab, Canvas 95%, transparent);
-}
-
-.note-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.meta {
-  font-size: 11px;
-  opacity: 0.6;
-}
-
-.del {
-  font-size: 12px;
-  padding: 4px 10px;
-  border: 1px solid color-mix(in oklab, currentColor 20%, transparent);
-  border-radius: 6px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-
-.del:hover {
-  background: color-mix(in oklab, #ef4444 15%, transparent);
-  border-color: #ef4444;
-  color: #ef4444;
-}
-
-.empty {
-  font-size: 13px;
-  opacity: 0.6;
-  margin: 0;
-  text-align: center;
-  padding: 24px 0;
 }
