@@ -6,9 +6,29 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
-    <main class="popup">
+    <main class="popup" x-data="popup" x-cloak>
       <h1>Distraction-Free Browser</h1>
-      <p class="placeholder">Toggles arrive in phase 6.</p>
+      <ul class="sites">
+        <li>
+          <label>
+            <span class="name">YouTube</span>
+            <input type="checkbox" x-model="state.youtube" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <span class="name">Facebook</span>
+            <input type="checkbox" x-model="state.facebook" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <span class="name">TikTok</span>
+            <input type="checkbox" x-model="state.tiktok" />
+          </label>
+        </li>
+      </ul>
+      <p class="hint">Toggle off to disable blocking on that site.</p>
     </main>
     <script src="../dist/popup/popup.js" defer></script>
   </body>

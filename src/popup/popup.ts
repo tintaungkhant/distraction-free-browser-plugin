@@ -1,8 +1,25 @@
-import { loadState } from "../shared/runtime.ts";
+import Alpine from "alpinejs";
+import type { BlockingState } from "../shared/types.ts";
+import { DEFAULT_STATE } from "../shared/types.ts";
+import { loadState, saveState } from "../shared/runtime.ts";
 
-async function init(): Promise<void> {
-  const state = await loadState();
-  console.debug("[DFB] popup state", state);
+interface PopupComponent {
+  state: BlockingState;
+  init(): Promise<void>;
 }
 
-void init();
+document.addEventListener("alpine:init", () => {
+  Alpine.data("popup", () => ({
+    state: { ...DEFAULT_STATE },
+    async init(this: PopupComponent & {
+      $watch: (key: string, cb: (next: BlockingState) => void) => void;
+    }) {
+      this.state = await loadState();
+      this.$watch("state", (next) => {
+        void saveState(next);
+      });
+    },
+  }));
+});
+
+Alpine.start();
