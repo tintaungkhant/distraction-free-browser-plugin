@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-rm -rf dist releases
+rm -rf dist
 bun run build
 mkdir -p releases
 
