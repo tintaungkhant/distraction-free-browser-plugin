@@ -28,12 +28,40 @@ document.addEventListener("keydown", (e) => {
 
 async function init(): Promise<void> {
   const data = await loadNote();
-  editor!.innerHTML = data.html;
+  setNoteHTML(data.html);
   if (data.updatedAt) {
     setStatus(`Last saved ${formatTime(data.updatedAt)}`);
   } else {
     setStatus("");
   }
+}
+
+function setNoteHTML(html: string): void {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  sanitize(doc.body);
+  editor!.replaceChildren(...Array.from(doc.body.childNodes));
+}
+
+function sanitize(root: ParentNode): void {
+  const dangerous = root.querySelectorAll(
+    "script, iframe, object, embed, form, link, meta, style",
+  );
+  dangerous.forEach((el) => el.remove());
+
+  root.querySelectorAll("*").forEach((el) => {
+    Array.from(el.attributes).forEach((attr) => {
+      if (attr.name.startsWith("on")) {
+        el.removeAttribute(attr.name);
+        return;
+      }
+      if (
+        (attr.name === "href" || attr.name === "src") &&
+        /^\s*javascript:/i.test(attr.value)
+      ) {
+        el.removeAttribute(attr.name);
+      }
+    });
+  });
 }
 
 function scheduleSave(): void {
@@ -100,7 +128,21 @@ function handleDrop(e: DragEvent): void {
 
 function insertImage(dataURL: string): void {
   editor!.focus();
-  document.execCommand("insertHTML", false, `<img src="${dataURL}" />`);
+  const img = document.createElement("img");
+  img.src = dataURL;
+
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0 || !editor!.contains(sel.anchorNode)) {
+    editor!.appendChild(img);
+  } else {
+    const range = sel.getRangeAt(0);
+    range.deleteContents();
+    range.insertNode(img);
+    range.setStartAfter(img);
+    range.setEndAfter(img);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
   editor!.dispatchEvent(new Event("input", { bubbles: true }));
 }
 
