@@ -14,6 +14,7 @@ ZIP="releases/distraction-free-browser-${TIMESTAMP}.zip"
 zip -rq "$ZIP" \
   manifest.json \
   icons/icon-16.png icons/icon-32.png icons/icon-48.png icons/icon-128.png \
+  icons/note-16.png icons/note-32.png icons/note-48.png icons/note-128.png \
   popup/popup.html popup/popup.css \
   options/options.html options/options.css \
   notes/notes.html notes/notes.css \
