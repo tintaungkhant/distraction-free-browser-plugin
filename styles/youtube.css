@@ -1,1 +1,32 @@
-/* YouTube blocking rules — phase 3 */
+/* Route blocked: any path except /results and /watch — hide page body, keep masthead. */
+html:not(.dfb-disabled).dfb-route-blocked ytd-page-manager,
+html:not(.dfb-disabled).dfb-route-blocked ytd-mini-guide-renderer,
+html:not(.dfb-disabled).dfb-route-blocked tp-yt-app-drawer#guide {
+  display: none !important;
+}
+
+/* Always-on hides (any allowed route): notifications bell, voice search mic. */
+html:not(.dfb-disabled) ytd-notification-topbar-button-renderer,
+html:not(.dfb-disabled) #voice-search-button {
+  display: none !important;
+}
+
+/* /watch — kill recommendations, comments, end-screen cards, autoplay toggle, live chat. */
+html:not(.dfb-disabled) ytd-watch-flexy #secondary,
+html:not(.dfb-disabled) ytd-watch-flexy #comments,
+html:not(.dfb-disabled) ytd-comments,
+html:not(.dfb-disabled) ytd-live-chat-frame,
+html:not(.dfb-disabled) .ytp-ce-element,
+html:not(.dfb-disabled) .ytp-endscreen-content,
+html:not(.dfb-disabled) .ytp-autonav-toggle-button-container {
+  display: none !important;
+}
+
+/* /results — kill shorts shelves, ads, "people also watched" promos. */
+html:not(.dfb-disabled) ytd-reel-shelf-renderer,
+html:not(.dfb-disabled) ytd-shelf-renderer[is-shorts],
+html:not(.dfb-disabled) ytd-ad-slot-renderer,
+html:not(.dfb-disabled) ytd-search-pyv-renderer,
+html:not(.dfb-disabled) ytd-promoted-sparkles-web-renderer {
+  display: none !important;
+}
