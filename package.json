@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build:content": "bun build src/content/youtube.ts src/content/facebook.ts src/content/tiktok.ts --outdir dist/content --target browser --format iife",
+    "build:popup": "bun build src/popup/popup.ts --outdir dist/popup --target browser --format iife",
+    "build": "bun run build:content && bun run build:popup",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

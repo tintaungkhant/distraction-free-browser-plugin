@@ -1,4 +1,3 @@
-import type { SiteKey } from "../shared/types.ts";
+import { bootContentScript } from "../shared/runtime.ts";
 
-const SITE: SiteKey = "tiktok";
-console.debug(`[DFB] ${SITE} content script loaded`);
+void bootContentScript("tiktok");

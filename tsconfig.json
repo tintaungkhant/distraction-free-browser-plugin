@@ -8,12 +8,10 @@
 
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
 
-    "outDir": "dist",
-    "rootDir": "src",
+    "noEmit": true,
 
     "strict": true,
     "noUnusedLocals": true,
