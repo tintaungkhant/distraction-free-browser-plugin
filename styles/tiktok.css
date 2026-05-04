@@ -1,1 +1,28 @@
-/* TikTok blocking rules — phase 5 */
+/* Feed lists and items across For You, Following, Explore, video-feed contexts. */
+html:not(.dfb-disabled) [data-e2e*="recommend-list"],
+html:not(.dfb-disabled) [data-e2e*="following-list"],
+html:not(.dfb-disabled) [data-e2e*="explore-list"],
+html:not(.dfb-disabled) [data-e2e*="explore-item"],
+html:not(.dfb-disabled) [data-e2e*="explore-card"],
+html:not(.dfb-disabled) [data-e2e*="explore-feed"],
+html:not(.dfb-disabled) [data-e2e*="video-feed"] {
+  display: none !important;
+}
+
+/* Profile video grid. */
+html:not(.dfb-disabled) [data-e2e*="user-post-item"] {
+  display: none !important;
+}
+
+/* Search result video cards. */
+html:not(.dfb-disabled) [data-e2e*="search-card"],
+html:not(.dfb-disabled) [data-e2e*="search_top"],
+html:not(.dfb-disabled) [data-e2e*="search-common-item"] {
+  display: none !important;
+}
+
+/* Single-video pages and player containers. */
+html:not(.dfb-disabled) [data-e2e="browse-video"],
+html:not(.dfb-disabled) [data-e2e="video-player"] {
+  display: none !important;
+}
