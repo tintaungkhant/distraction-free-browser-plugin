@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Distraction-Free Browser",
+  "version": "0.1.0",
+  "description": "Hide distracting content on YouTube, Facebook, and TikTok.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.facebook.com/*",
+    "*://*.tiktok.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["dist/content/youtube.js"],
+      "css": ["styles/youtube.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["dist/content/facebook.js"],
+      "css": ["styles/facebook.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "js": ["dist/content/tiktok.js"],
+      "css": ["styles/tiktok.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Distraction-Free Browser"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "distraction-free-browser@local",
+      "strict_min_version": "115.0"
+    }
+  }
+}
